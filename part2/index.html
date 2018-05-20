@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../part1/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <h1>Slideshow</h1>
+    <div>
+       <section id="imageBox">
+           <img src="images/1.jpeg" alt="" width="100%" id="imgOne">
+           <img src="images/2.jpeg" alt="" width="100%" id="imgTwo">
+           <img src="images/3.jpeg" alt="" width="100%" id="imgThree">
+           <img src="images/4.jpeg" alt="" width="100%" id="imgFour">
+           <img src="images/5.jpeg" alt="" width="100%" id="imgFive">
+       </section>
+        <ul>
+            <li id="one">01</li>
+            <li id="two">02</li>
+            <li id="three">03</li>
+            <li id="four">04</li>
+            <li id="five">05</li>
+        </ul>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            
+            $("img:gt(0)").hide();
+            $("#one").addClass("active");
+            
+            $("ul").click(function(e) {
+                var value = $(event.target);
+                if (value.is("#one")) {
+                    $("#one").addClass("active");
+                    $("#two, #three, #four, #five").removeClass("active");
+                    $("#imgOne").fadeIn(1000).show();
+                    $("#imgTwo, #imgThree, #imgFour, #imgFive").hide();
+                } else if (value.is("#two")) {
+                    $("#two").addClass("active");
+                    $("#one, #three, #four, #five").removeClass("active");
+                    $("#imgTwo").fadeIn(1000).show();
+                    $("#imgOne, #imgThree, #imgFour, #imgFive").hide();
+                } else if (value.is("#three")) {
+                    $("#three").addClass("active");
+                    $("#one, #two, #four, #five").removeClass("active");
+                    $("#imgThree").fadeIn(1000).show();
+                    $("#imgOne, #imgTwo, #imgFour, #imgFive").hide();
+                } else if (value.is("#four")) {
+                    $("#four").addClass("active");
+                    $("#one, #two, #three, #five").removeClass("active");
+                    $("#imgFour").fadeIn(1000).show();
+                    $("#imgOne, #imgTwo, #imgThree, #imgFive").hide();
+                } else if (value.is("#five")) {
+                    $("#five").addClass("active");
+                    $("#one, #two, #three, #four").removeClass("active");
+                    $("#imgFive").fadeIn(1000).show();
+                    $("#imgOne, #imgTwo, #imgThree, #imgFour").hide();
+                }
+                });
+            });
+    </script>
+</body>
+</html>

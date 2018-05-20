@@ -1,0 +1,39 @@
+body, html {
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+body {max-width: 80vw;}
+h1 {
+    font-size: 1.5em;
+    color: #ed8907;
+    font-weight: lighter;
+}
+html {font-family: sans-serif;}
+
+/* Tabbed Menu Bar */
+#navigationTop {
+    background: #ed8907;
+    padding: 1em;
+    margin: 0 1em;
+}
+#sectionContent {
+    background: #fff;
+    padding: 1em;
+    margin: 0 1em;
+    border-left: .01em solid #ed8907;
+    border-right: .01em solid #ed8907;
+    border-bottom: .01em solid #ed8907;
+}
+nav a {
+    text-decoration: none;
+    padding: 1em;
+    margin: .5em;
+    color: #fff;
+    display: inline-block;
+}
+nav a:hover {background: #fff;color: #000;}
+.active2 {
+    background: #fff;
+    color: #000;
+}

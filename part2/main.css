@@ -1,0 +1,35 @@
+body, html {
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+body {max-width: 80vw;}
+h1 {
+    font-size: 1.5em;
+    color: #ed8907;
+    font-weight: lighter;
+}
+html {font-family: sans-serif;}
+
+
+/* Slideshow */
+div {
+    background: #fff;
+    margin: 1em;
+    padding: 1em;
+    border: .01em solid #ed8907;
+}
+ul {
+    display: flex;
+    height: 8vh;
+    justify-content: flex-start;
+    align-items: center;
+}
+ul li {
+    list-style: none;
+    padding: .5em;
+    cursor: pointer;
+}
+ul li {text-decoration: none;color: #ed8907;}
+ul li:hover {color: #07edbe;}
+.active {text-decoration: underline;color: #07edbe;}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../part1/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <h1>Accordion</h1>
+    
+    <section id="accordionBox">
+       
+       <a href="#pOne" id="pContentOne"><span class="plus1"></span></a>
+       <p id="pOne"><strong>Graphic design</strong> is the process of visual communication and problem-solving using one or more of typography, photography and illustration. The field is considered a subset of visual communication and communication design, but sometimes the term "graphic design" is used synonymously. Graphic designers create and combine symbols, images and text to form visual representations of ideas and messages. They use typography, visual arts and page layout techniques to create visual compositions. Common uses of graphic design include corporate design (logos and branding), editorial design (magazines, newspapers and books), wayfinding or environmental design, advertising, web design, communication design, product packaging and signage.</p>
+       
+       <a href="#pTwo" id="pContentTwo"><span class="plus2"></span></a>
+       <p id="pTwo"><strong>A graphic design project</strong> may involve the stylization and presentation of existing text and either preexisting imagery or images developed by the graphic designer. Elements can be incorporated in both traditional and digital form, which involves the use of visual arts, typography, and page layout techniques. Graphic designers organize pages and optionally add graphic elements. Graphic designers can commission photographers or illustrators to create original pieces. Designers use digital tools, often referred to as interactive design, or multimedia design. Designers need communication skills to convince an audience and sell their designs. The "process school" is concerned with communication; it highlights the channels and media through which messages are transmitted and by which senders and receivers encode and decode these message. The semiotic school treats a message as a construction of signs which through interaction with receivers, produces meaning; communication as an agent.</p>
+       
+       <a href="#pThree" id="pContentThree"><span class="plus3"></span></a>
+       <p id="pThree"><strong>Typography</strong> includes type design, modifying type glyphs and arranging type. Type glyphs (characters) are created and modified using illustration techniques. Type arrangement is the selection of typefaces, point size, tracking (the space between all characters used), kerning (the space between two specific characters) and leading (line spacing). Typography is performed by typesetters, compositors, typographers, graphic artists, art directors and clerical workers. Until the digital age, typography was a specialized occupation. <br><br><strong>Page Layout</strong> deals with the arrangement of elements (content) on a page, such as image placement, text layout and style. Page design has always been a consideration in printed material and more recently extended to displays such as web pages. Elements typically consist of type (text), images (pictures), and (with print media) occasionally place-holder graphics such as a dieline for elements that are not printed with ink such as die/laser cutting, foil stamping or blind embossing. <br><br><strong>Printmaking</strong> is the process of making artworks by printing on paper and other materials or surfaces. The process is capable of producing multiples of the same work, each called a print. Each print is an original, technically known as an impression. Prints are created from a single original surface, technically a matrix. Common types of matrices include: plates of metal, usually copper or zinc for engraving or etching; stone, used for lithography; blocks of wood for woodcuts, linoleum for linocuts and fabric plates for screen-printing. Works printed from a single plate create an edition, in modern times usually each signed and numbered to form a limited edition. Prints may be published in book form, as artist's books. A single print could be the product of one or multiple techniques. The pencil is one of the most basic graphic design tools. Aside from technology, graphic design requires judgment and creativity. Critical, observational, quantitative and analytic thinking are required for design layouts and rendering. If the executor is merely following a solution (e.g. sketch, script or instructions) provided by another designer (such as an art director), then the executor is not usually considered the designer.</p>
+    </section>
+    
+    
+    <script>
+        $(document).ready(function() {
+            $("#pOne, #pTwo, #pThree").hide();
+            
+            $("#pContentOne").click(function() {            
+                $(".plus1").toggleClass("minus1");                
+                $(".plus2, .plus3").removeClass("minus2");
+                $(".plus2, .plus3").removeClass("minus3");
+                $("#pContentOne").toggleClass("accordionOpen");
+                $("#pContentTwo, #pContentThree").removeClass("accordionOpen");
+                $("#pOne").slideToggle(700);
+                $("#pTwo, #pThree").slideUp(700);
+            });
+            
+            $("#pContentTwo").click(function() {
+                $(".plus2").toggleClass("minus2");
+                $(".plus1, .plus3").removeClass("minus1");
+                $(".plus1, .plus3").removeClass("minus3");
+                $("#pContentTwo").toggleClass("accordionOpen");
+                $("#pContentOne, #pContentThree").removeClass("accordionOpen");
+                $("#pTwo").slideToggle(700);
+                $("#pOne, #pThree").slideUp(700);
+            });
+            
+            $("#pContentThree").click(function() {
+                $(".plus3").toggleClass("minus3");
+                $(".plus2, .plus1").removeClass("minus2");
+                $(".plus2, .plus1").removeClass("minus1");
+                $("#pContentThree").toggleClass("accordionOpen");
+                $("#pContentOne, #pContentTwo").removeClass("accordionOpen");
+                $("#pThree").slideToggle(700);
+                $("#pOne, #pTwo").slideUp(700);
+            });
+        });
+    </script>
+</body>
+</html>
